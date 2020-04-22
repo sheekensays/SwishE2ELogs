@@ -1,0 +1,72 @@
+##[section]Starting: Test
+==============================================================================
+Task         : .NET Core
+Description  : Build, test, package, or publish a dotnet application, or run a custom dotnet command
+Version      : 2.153.3
+Author       : Microsoft Corporation
+Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/build/dotnet-core-cli
+==============================================================================
+[command]C:\WINDOWS\system32\chcp.com 65001
+Active code page: 65001
+[command]"C:\Program Files\dotnet\dotnet.exe" test D:\BA\1\_work\287\s\SwishEndToEndTest\SwishEndToEndTest.csproj --logger trx --results-directory D:\BA\1\_work\_temp
+Test run for D:\BA\1\_work\287\s\SwishEndToEndTest\bin\Debug\netcoreapp3.0\SwishEndToEndTest.dll(.NETCoreApp,Version=v3.0)
+Microsoft (R) Test Execution Command Line Tool Version 16.5.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.47]     SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction [FAIL]
+[xUnit.net 00:00:00.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToPrivateSwishTransaction [FAIL]
+[xUnit.net 00:00:00.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction [FAIL]
+[xUnit.net 00:00:00.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderSwishTransaction [FAIL]
+  X SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction [11ms]
+  Error Message:
+   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
+  Stack Trace:
+     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
+   at SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 161
+--- End of stack trace from previous location where exception was thrown ---
+  X SwishEndToEndTest.Tests.SwishTests.PrivateToPrivateSwishTransaction [1ms]
+  Error Message:
+   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
+  Stack Trace:
+     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
+   at SwishEndToEndTest.Tests.SwishTests.PrivateToPrivateSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 107
+--- End of stack trace from previous location where exception was thrown ---
+  X SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction [1ms]
+  Error Message:
+   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
+  Stack Trace:
+     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
+   at SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 53
+--- End of stack trace from previous location where exception was thrown ---
+  X SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderSwishTransaction [1ms]
+  Error Message:
+   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
+  Stack Trace:
+     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
+   at SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 215
+--- End of stack trace from previous location where exception was thrown ---
+Results File: D:\BA\1\_work\_temp\e4020c_WSP4070A_2020-04-22_08_51_51.trx
+
+Test Run Failed.
+Total tests: 4
+     Failed: 4
+ Total time: 1,0328 Seconds
+##[error]Error: The process 'C:\Program Files\dotnet\dotnet.exe' failed with exit code 1
+##[error]Dotnet command failed with non-zero exit code on the following projects : D:\BA\1\_work\287\s\SwishEndToEndTest\SwishEndToEndTest.csproj
+##[section]Async Command Start: Publish test results
+Publishing test results to test run '417832'
+Test results remaining: 4. Test run id: 417832
+Published Test Run : https://tfs.sebank.se/tfs/MSDE/GetSwish/_TestManagement/Runs?runId=417832&_a=runCharts
+##[section]Async Command End: Publish test results
+##[section]Finishing: Test
