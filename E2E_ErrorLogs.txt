@@ -1,72 +1,94 @@
-##[section]Starting: Test
-==============================================================================
-Task         : .NET Core
-Description  : Build, test, package, or publish a dotnet application, or run a custom dotnet command
-Version      : 2.153.3
-Author       : Microsoft Corporation
-Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/build/dotnet-core-cli
-==============================================================================
-[command]C:\WINDOWS\system32\chcp.com 65001
-Active code page: 65001
-[command]"C:\Program Files\dotnet\dotnet.exe" test D:\BA\1\_work\287\s\SwishEndToEndTest\SwishEndToEndTest.csproj --logger trx --results-directory D:\BA\1\_work\_temp
-Test run for D:\BA\1\_work\287\s\SwishEndToEndTest\bin\Debug\netcoreapp3.0\SwishEndToEndTest.dll(.NETCoreApp,Version=v3.0)
-Microsoft (R) Test Execution Command Line Tool Version 16.5.0
-Copyright (c) Microsoft Corporation.  All rights reserved.
-
-Starting test execution, please wait...
-
-A total of 1 test files matched the specified pattern.
-[xUnit.net 00:00:00.47]     SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction [FAIL]
-[xUnit.net 00:00:00.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToPrivateSwishTransaction [FAIL]
-[xUnit.net 00:00:00.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction [FAIL]
-[xUnit.net 00:00:00.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderSwishTransaction [FAIL]
-  X SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction [11ms]
-  Error Message:
-   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
-  Stack Trace:
-     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
-   at System.Uri..ctor(String uriString)
-   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
-   at SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 161
---- End of stack trace from previous location where exception was thrown ---
-  X SwishEndToEndTest.Tests.SwishTests.PrivateToPrivateSwishTransaction [1ms]
-  Error Message:
-   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
-  Stack Trace:
-     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
-   at System.Uri..ctor(String uriString)
-   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
-   at SwishEndToEndTest.Tests.SwishTests.PrivateToPrivateSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 107
---- End of stack trace from previous location where exception was thrown ---
-  X SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction [1ms]
-  Error Message:
-   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
-  Stack Trace:
-     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
-   at System.Uri..ctor(String uriString)
-   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
-   at SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 53
---- End of stack trace from previous location where exception was thrown ---
-  X SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderSwishTransaction [1ms]
-  Error Message:
-   System.UriFormatException : Invalid URI: The format of the URI could not be determined.
-  Stack Trace:
-     at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
-   at System.Uri..ctor(String uriString)
-   at SwishEndToEndTest.Steps.SwishStep.GivenIWantToPerformPostRequestToCreateNewAgreementAsync(String endpoint) in D:\BA\1\_work\287\s\SwishEndToEndTest\Steps\SwishStep.cs:line 56
-   at SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderSwishTransaction() in D:\BA\1\_work\287\s\SwishEndToEndTest\Tests\SwishTests.cs:line 215
---- End of stack trace from previous location where exception was thrown ---
-Results File: D:\BA\1\_work\_temp\e4020c_WSP4070A_2020-04-22_08_51_51.trx
-
-Test Run Failed.
-Total tests: 4
-     Failed: 4
- Total time: 1,0328 Seconds
-##[error]Error: The process 'C:\Program Files\dotnet\dotnet.exe' failed with exit code 1
-##[error]Dotnet command failed with non-zero exit code on the following projects : D:\BA\1\_work\287\s\SwishEndToEndTest\SwishEndToEndTest.csproj
-##[section]Async Command Start: Publish test results
-Publishing test results to test run '417832'
-Test results remaining: 4. Test run id: 417832
-Published Test Run : https://tfs.sebank.se/tfs/MSDE/GetSwish/_TestManagement/Runs?runId=417832&_a=runCharts
-##[section]Async Command End: Publish test results
-##[section]Finishing: Test
+2020-05-19T10:45:14.5438041Z ##[section]Starting: Test
+2020-05-19T10:45:14.5603172Z ==============================================================================
+2020-05-19T10:45:14.5603413Z Task         : .NET Core
+2020-05-19T10:45:14.5603633Z Description  : Build, test, package, or publish a dotnet application, or run a custom dotnet command
+2020-05-19T10:45:14.5603840Z Version      : 2.153.3
+2020-05-19T10:45:14.5603988Z Author       : Microsoft Corporation
+2020-05-19T10:45:14.5604233Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/build/dotnet-core-cli
+2020-05-19T10:45:14.5604730Z ==============================================================================
+2020-05-19T10:45:15.1138944Z [command]C:\WINDOWS\system32\chcp.com 65001
+2020-05-19T10:45:15.1299485Z Active code page: 65001
+2020-05-19T10:45:15.2398144Z [command]"C:\Program Files\dotnet\dotnet.exe" test D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\SwishEndToEndTest.csproj --logger trx --results-directory D:\BA\1\_work\_temp
+2020-05-19T10:45:17.7396631Z Tests\SwishTests.cs(89,27): warning CS1998: This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread. [D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\SwishEndToEndTest.csproj]
+2020-05-19T10:45:17.9045813Z Test run for D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\bin\Debug\netcoreapp3.0\SwishEndToEndTest.dll(.NETCoreApp,Version=v3.0)
+2020-05-19T10:45:17.9684550Z Microsoft (R) Test Execution Command Line Tool Version 16.5.0
+2020-05-19T10:45:17.9685084Z Copyright (c) Microsoft Corporation.  All rights reserved.
+2020-05-19T10:45:17.9685370Z 
+2020-05-19T10:45:18.0436299Z Starting test execution, please wait...
+2020-05-19T10:45:18.0941619Z 
+2020-05-19T10:45:18.0942142Z A total of 1 test files matched the specified pattern.
+2020-05-19T10:45:27.8007861Z [xUnit.net 00:00:08.48]     SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderEcommerceSwishTransaction [FAIL]
+2020-05-19T10:45:27.8444223Z   X SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderEcommerceSwishTransaction [7s 480ms]
+2020-05-19T10:45:27.8444871Z   Error Message:
+2020-05-19T10:45:27.8445167Z    Expected actualResponse.StatusCode to be OK, but found InternalServerError.
+2020-05-19T10:45:27.8445349Z   Stack Trace:
+2020-05-19T10:45:27.8445554Z      at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+2020-05-19T10:45:27.8445786Z    at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+2020-05-19T10:45:27.8446028Z    at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+2020-05-19T10:45:27.8446288Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:27.8446735Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:27.8446980Z    at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+2020-05-19T10:45:27.8447285Z    at FluentAssertions.Primitives.ObjectAssertions.Be(Object expected, String because, Object[] becauseArgs)
+2020-05-19T10:45:27.8447823Z    at SwishEndToEndTest.Steps.SwishStep.ThenIExpectHttpStatusCodeIs(HttpStatusCode expectedHttpStatusCode) in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Steps\SwishStep.cs:line 83
+2020-05-19T10:45:27.8448431Z    at SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderEcommerceSwishTransaction() in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Tests\SwishTests.cs:line 257
+2020-05-19T10:45:27.8448854Z --- End of stack trace from previous location where exception was thrown ---
+2020-05-19T10:45:28.7056232Z [xUnit.net 00:00:09.38]     SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderCorporateSwishTransaction [FAIL]
+2020-05-19T10:45:29.3222352Z   X SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderCorporateSwishTransaction [907ms]
+2020-05-19T10:45:30.4750528Z   Error Message:
+2020-05-19T10:45:30.4750768Z    Expected actualResponse.StatusCode to be OK, but found InternalServerError.
+2020-05-19T10:45:30.4750942Z   Stack Trace:
+2020-05-19T10:45:30.4751117Z      at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+2020-05-19T10:45:30.4751367Z    at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+2020-05-19T10:45:30.4751610Z    at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+2020-05-19T10:45:30.4751856Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:30.4752094Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:30.4752389Z    at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+2020-05-19T10:45:30.4752666Z    at FluentAssertions.Primitives.ObjectAssertions.Be(Object expected, String because, Object[] becauseArgs)
+2020-05-19T10:45:30.4753142Z    at SwishEndToEndTest.Steps.SwishStep.ThenIExpectHttpStatusCodeIs(HttpStatusCode expectedHttpStatusCode) in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Steps\SwishStep.cs:line 83
+2020-05-19T10:45:30.4753762Z    at SwishEndToEndTest.Tests.SwishTests.PrivateToSoleTraderCorporateSwishTransaction() in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Tests\SwishTests.cs:line 199
+2020-05-19T10:45:30.4754163Z --- End of stack trace from previous location where exception was thrown ---
+2020-05-19T10:45:30.4754447Z [xUnit.net 00:00:10.62]     SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction [FAIL]
+2020-05-19T10:45:30.8214941Z   X SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction [1s 237ms]
+2020-05-19T10:45:30.8215480Z   Error Message:
+2020-05-19T10:45:30.8218301Z    Expected actualResponse.StatusCode to be OK, but found InternalServerError.
+2020-05-19T10:45:30.8218511Z   Stack Trace:
+2020-05-19T10:45:30.8218685Z      at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+2020-05-19T10:45:30.8219066Z    at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+2020-05-19T10:45:30.8219308Z    at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+2020-05-19T10:45:30.8219572Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:30.8219808Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:30.8220050Z    at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+2020-05-19T10:45:30.8220343Z    at FluentAssertions.Primitives.ObjectAssertions.Be(Object expected, String because, Object[] becauseArgs)
+2020-05-19T10:45:30.8221002Z    at SwishEndToEndTest.Steps.SwishStep.ThenIExpectHttpStatusCodeIs(HttpStatusCode expectedHttpStatusCode) in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Steps\SwishStep.cs:line 83
+2020-05-19T10:45:30.8221601Z    at SwishEndToEndTest.Tests.SwishTests.PrivateToECommerceSwishTransaction() in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Tests\SwishTests.cs:line 140
+2020-05-19T10:45:30.8221984Z --- End of stack trace from previous location where exception was thrown ---
+2020-05-19T10:45:31.0505392Z [xUnit.net 00:00:11.73]     SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction [FAIL]
+2020-05-19T10:45:31.1214834Z   X SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction [1s 104ms]
+2020-05-19T10:45:31.1215211Z   Error Message:
+2020-05-19T10:45:31.1215392Z    Expected actualResponse.StatusCode to be OK, but found InternalServerError.
+2020-05-19T10:45:31.1215561Z   Stack Trace:
+2020-05-19T10:45:31.1215792Z      at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+2020-05-19T10:45:31.1216021Z    at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+2020-05-19T10:45:31.1216261Z    at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+2020-05-19T10:45:31.1217120Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:31.1217355Z    at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+2020-05-19T10:45:31.1217625Z    at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+2020-05-19T10:45:31.1217922Z    at FluentAssertions.Primitives.ObjectAssertions.Be(Object expected, String because, Object[] becauseArgs)
+2020-05-19T10:45:31.1218381Z    at SwishEndToEndTest.Steps.SwishStep.ThenIExpectHttpStatusCodeIs(HttpStatusCode expectedHttpStatusCode) in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Steps\SwishStep.cs:line 83
+2020-05-19T10:45:31.1219025Z    at SwishEndToEndTest.Tests.SwishTests.PrivateToCorporateSwishTransaction() in D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\Tests\SwishTests.cs:line 63
+2020-05-19T10:45:31.1219422Z --- End of stack trace from previous location where exception was thrown ---
+2020-05-19T10:45:31.1347666Z Results File: D:\BA\1\_work\_temp\E4018C_WSP3947A_2020-05-19_12_45_27.trx
+2020-05-19T10:45:31.1347967Z 
+2020-05-19T10:45:31.1356324Z Test Run Failed.
+2020-05-19T10:45:31.1356683Z Total tests: 5
+2020-05-19T10:45:31.1356877Z      Passed: 1
+2020-05-19T10:45:31.1356992Z      Failed: 4
+2020-05-19T10:45:31.1358509Z  Total time: 13,0319 Seconds
+2020-05-19T10:45:33.9378318Z ##[error]Error: The process 'C:\Program Files\dotnet\dotnet.exe' failed with exit code 1
+2020-05-19T10:45:34.1623516Z ##[error]Dotnet command failed with non-zero exit code on the following projects : D:\BA\1\_work\r330\a\_seb-swish-automation-test\SwishEndToEndTest\SwishEndToEndTest.csproj
+2020-05-19T10:45:34.1647937Z ##[section]Async Command Start: Publish test results
+2020-05-19T10:45:34.2096595Z Publishing test results to test run '431203'
+2020-05-19T10:45:34.2097233Z Test results remaining: 5. Test run id: 431203
+2020-05-19T10:45:34.3567452Z Published Test Run : https://tfs.sebank.se/tfs/MSDE/GetSwish/_TestManagement/Runs?runId=431203&_a=runCharts
+2020-05-19T10:45:34.3755611Z ##[section]Async Command End: Publish test results
+2020-05-19T10:45:34.3756689Z ##[section]Finishing: Test
